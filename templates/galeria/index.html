@@ -7,8 +7,8 @@
     <title>Erica's Space</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #6ae1f3;
+            font-family: Cavolini, sans-serif;
+            background-color: #e0c3ee;
             margin: 1;
             padding: 20px;
         }
@@ -16,8 +16,15 @@
         h1 {
             text-align: left;
             color: #000708;
+            font-size: 55px;
         }
         
+        p {
+            text-align: left;
+            color: #202525;
+            font-size: 20px;
+        }
+
         .image-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -32,6 +39,13 @@
             height: 400px;
             object-fit: cover;
             margin: 15px;
+            transition: all 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        .image_container img:hover{
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
         }
 
         .image_container {
@@ -39,16 +53,16 @@
         }
 
         .image_container .text{
+            z-index: -1;
             position: absolute;
             top: 50%;
             left: 50%;
             width: 100%;
             height: 100%;
-            color: white;
+            color: #202525; 
             font-size: 30px;
             text-align: center;
-            line-height: 200px;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -12%);
         }
     </style>
 </head>
@@ -58,16 +72,32 @@
     <div class="image-gallery">
         <div class="image_container">
             <img id="imagem1" src="{% static 'imagens\agata.jpg' %}" alt="Agata">
-            <div class="text">Background text</div>
+            <div class="text">Essa é Agata, a gata.</div>
         </div>
-        <img id="imagem2" src="{% static 'imagens\meubemnapraia.jpg' %}" alt="Meubemnapraia">
-        <img id="imagem3" src="{% static 'imagens\milkmoo.jpg' %}" alt="MilkMoo">
-        <img id="imagem4" src="{% static 'imagens\praia.jpg' %}" alt="Praia">
-        <img id="imagem5" src="{% static 'imagens\nenis.jpg' %}" alt="Nenis">
-        <img id="imagem6" src="{% static 'imagens\agatadeitada.jpg' %}" alt="Agatadeitada">
+        <div class="image_container">
+            <img id="imagem2" src="{% static 'imagens\meubemnapraia.jpg' %}" alt="Meubemnapraia">
+            <div class="text">Eu e nenis, na praia.</div>
+        </div>
+        <div class="image_container">
+            <img id="imagem3" src="{% static 'imagens\milkmoo.jpg' %}" alt="MilkMoo">
+            <div class="text">Po, MilkShake bonzão.</div>
+        </div>
+        <div class="image_container">
+            <img id="imagem3" src="{% static 'imagens\praia.jpg' %}" alt="praia">
+            <div class="text">Tamoios, Unamar.</div>
+        </div>
+        <div class="image_container">
+            <img id="imagem3" src="{% static 'imagens\nenis.jpg' %}" alt="nenis">
+            <div class="text">Nenis, meu estresse diário.</div>
+        </div>
+        <div class="image_container">
+            <img id="imagem3" src="{% static 'imagens\agatadeitada.jpg' %}" alt="agatadeitada">
+            <div class="text">Linda, e rosa.</div>
+        </div>
         <!-- Adicione mais imagens aqui -->
+        <p>Por hoje é só pessoal,conforme ideias e conhecimento forem chegando eu vou atualizando.</p>
     </div>
-    <script>
+    <!-- <script>
         // for each image_container add a listener to the mouseover
         var image_container = document.getElementsByClassName("image_container");
         for (var i = 0; i < image_container.length; i++) {
@@ -84,8 +114,9 @@
             // change the opacity of the image
             this.getElementsByTagName("img")[0].style.opacity = "1";
         }
-    </script>
+    </script> -->
 </body>
 </html>
+
 
 
