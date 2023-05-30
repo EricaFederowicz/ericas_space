@@ -67,6 +67,24 @@
         <img id="imagem6" src="{% static 'imagens\agatadeitada.jpg' %}" alt="Agatadeitada">
         <!-- Adicione mais imagens aqui -->
     </div>
+    <script>
+        // for each image_container add a listener to the mouseover
+        var image_container = document.getElementsByClassName("image_container");
+        for (var i = 0; i < image_container.length; i++) {
+            image_container[i].addEventListener("mouseover", mouseOver, false);
+            image_container[i].addEventListener("mouseout", mouseOut, false);
+        }
+    
+        function mouseOver() {
+            // change the opacity of the image
+            this.getElementsByTagName("img")[0].style.opacity = "0";
+        }
+    
+        function mouseOut() {
+            // change the opacity of the image
+            this.getElementsByTagName("img")[0].style.opacity = "1";
+        }
+    </script>
 </body>
 </html>
 
